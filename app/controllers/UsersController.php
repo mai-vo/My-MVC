@@ -7,7 +7,8 @@ class UsersController
 {
 	public function index()
 	{
-		$users=Users::all('users');
+
+		$users=Users::getAll();
 		return view('users',['users'=>$users]);
 	}
 	public function add()
@@ -22,7 +23,7 @@ class UsersController
 			'phone' =>$_POST['phone'],
 			'address' =>$_POST['address']
 		];
-		Users::insert($new_User);
+		Users::insert1($new_User);
 		return redirect('users');
 	}
 

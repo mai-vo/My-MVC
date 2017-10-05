@@ -21,14 +21,6 @@ class QueryBuilder
 		return $statement->fetchAll(PDO::FETCH_CLASS);
 	}
 
-	// public function update($tbl,$parameters){
-	// 	$query='UPDATE SET ';
-	// 	$statement=$this->pdo->prepare($query);
-	// 	$statement->bindParam(':name',$parameters['name']);
-	// 	$statement->bindParam(':phone',$parameters['phone']);
-	// 	$statement->bindParam(':address',$parameters['address']);
-	// 	$statement->execute();	
-	// }
 	public function commonInsert($tbl,$parameters)
 	{
 		$sql=sprintf(
@@ -46,6 +38,21 @@ class QueryBuilder
 			die('Something wrong !');
 		}
 		
+	}
+
+
+	public function query_excute($query)
+	{
+		$statement=$this->pdo->prepare($query);
+		$statement->execute();
+		
+	}
+
+	public function query_fetch($query)
+	{
+		$statement=$this->pdo->prepare($query);
+		$statement->execute();
+		return $statement->fetchAll(PDO::FETCH_CLASS);
 	}
 }
 ?>

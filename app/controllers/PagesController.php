@@ -7,8 +7,8 @@ class PagesController
 {
 	public function home()
 	{
-		$users=Users::getAll();
-		return view('index',['users'=>$users]);
+		//$users=Users::getAll();
+		return view('index');
 	}
 
 	public function about()
