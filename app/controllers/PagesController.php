@@ -1,20 +1,24 @@
 <?php 
+namespace App\Controllers;
+use App\Core\App;
+
 class PagesController
 {
 	public function home()
 	{
+
 		$users=App::get('database')->selectAll('users');
-		require 'views/index.view.php';
+		return view('index',['users'=>$users]);
 	}
 
 	public function about()
 	{
-		require 'views/about.view.php';
+		return view('about');
 	}
 
 	public function contact()
 	{
-		require 'views/contact.view.php';
+		return view('contact');
 	}
 }
 ?>
