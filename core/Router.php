@@ -32,9 +32,13 @@ class Router
 	{
 		if(array_key_exists($uri,$this->routes[$requestType]))
 		{
-			return $this->routes[$requestType][$uri];
+			return $this->callAction();
 		}
 		throw new Exception('No route definded for this URI.');
+	}
+	protected function callAction()
+	{
+			
 	}
 }
 ?>

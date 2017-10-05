@@ -6,7 +6,11 @@
 	<input type="text" name="name" value="">
 	<button type="submit">Submit</button>	
 </form>
-
+<?php 
+foreach ($users as $key => $value) {
+	echo $value->name;
+}
+?>
 <?php 
 	require('partials/footer.php');
 ?>	

@@ -14,5 +14,11 @@ class QueryBuilder
 		return $statement->fetchAll(PDO::FETCH_CLASS);
 
 	}
+	public function insert($tbl,$parameters){
+		$query='INSERT INTO '.$tbl.'(name) VALUES(:name)';
+		$statement=$this->pdo->prepare($query);
+		$statement->bindParam(':name',$parameters['name']);
+		$statement->execute();	
+	}
 }
 ?>
