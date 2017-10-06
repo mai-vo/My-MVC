@@ -5,7 +5,7 @@
 
 <div class="container">
 	<h1> Add Users </h1>
-	<form action="add" method="post">
+	<form action="/users/add" method="post">
 	  	<div class="form-group">
 	    	<label for="name">Name: </label>
 	    	<input type="text" class="form-control" id="email" name="name">
